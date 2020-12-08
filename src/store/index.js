@@ -8,7 +8,19 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     strict: true,
     state,
-    mutations: {},
+    mutations: {
+        registerWeb3Instance(state, payload) {
+            console.log('registerWeb3instance Mutation being executed', payload)
+            let result = payload
+            let web3Copy = state.web3
+            web3Copy.coinbase = result.coinbase
+            web3Copy.networkId = result.networkId
+            web3Copy.balance = parseInt(result.balance, 10)
+            web3Copy.isInjected = result.injectedWeb3
+            web3Copy.web3Instance = result.web3
+            state.web3 = web3Copy
+        }
+    },
     actions: {
         registerWeb3({ commit }) {
             console.log('registerWeb3 Action being executed')
