@@ -5,7 +5,7 @@ import DataMetamask from '@/components/data-metamask'
 export default {
  name: 'casino-dapp',
  components: {
- 'hello-metamask': HelloMetamask
+ 'data-metamask': DataMetamask
  }
 }
 </script><style scoped></style>
