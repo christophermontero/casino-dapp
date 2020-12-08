@@ -1,7 +1,9 @@
 <template>
- <p>Hello</p>
-</template><script>
+  <p>Hello</p>
+</template>
+<script>
 export default {
- name: 'hello-metamask'
-}
-</script><style scoped></style>
+  name: "hello-metamask",
+};
+</script>
+<style scoped></style>
