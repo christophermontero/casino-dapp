@@ -20,7 +20,7 @@ let getWeb3 = new Promise(function (resolve, reject) {
             }
         })
     } else {
-        // web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545')) GANACHE FALLBACK
+        // web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'))
         reject(new Error('Unable to connect to Metamask'))
     }
 })
@@ -42,14 +42,9 @@ let getWeb3 = new Promise(function (resolve, reject) {
     .then(result => {
         return new Promise(function (resolve, reject) {
             // Retrieve coinbase
-            result.web3().eth.getCoinbase((err, coinbase) => {
-                if (err) {
-                    reject(new Error('Unable to retrieve coinbase'))
-                } else {
-                    result = Object.assign({}, result, { coinbase })
-                    resolve(result)
-                }
-            })
+            const coinbase = '0xAF56688B5c73329Ed88498d6bd5Ab830aC849c4B'
+            result = Object.assign({}, result, { coinbase })
+            resolve(result)
         })
     })
     .then(result => {
@@ -57,7 +52,7 @@ let getWeb3 = new Promise(function (resolve, reject) {
             // Retrieve balance for coinbase
             result.web3().eth.getBalance(result.coinbase, (err, balance) => {
                 if (err) {
-                    reject(new Error('Unable to retrieve balance for address: ' + result.coinbase))
+                    reject(new Error('Unable to retrieve balance for coinbase: ' + result.coinbase))
                 } else {
                     result = Object.assign({}, result, { balance })
                     resolve(result)
