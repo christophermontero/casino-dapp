@@ -1,8 +1,14 @@
 <template>
-  <data-metamask />
+  <div>
+    <casino-component />
+    <data-metamask />
+  </div>
 </template>
+
 <script>
 import DataMetamask from "@/components/data-metamask";
+import CasinoComponent from "@/components/casino-component";
+
 export default {
   name: "casino-dapp",
   beforeCreate() {
@@ -11,7 +17,9 @@ export default {
   },
   components: {
     "data-metamask": DataMetamask,
+    "casino-component": CasinoComponent,
   },
 };
 </script>
+
 <style scoped></style>
