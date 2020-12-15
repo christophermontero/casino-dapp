@@ -97,7 +97,7 @@ li {
   cursor: pointer;
 }
 * {
-  color: #444444;
+  color: #148f77;
 }
 #has-won {
   color: green;
