@@ -1,7 +1,7 @@
 <template>
   <div class="casino container">
     <h1>Bienvenido al Casino-Dapp</h1>
-    <h4>Porfavor seleccione un número de 1 a 10</h4>
+    <h4>Porfavor seleccione un número de 1 a 5</h4>
     Apuesta: <input v-model="amount" placeholder="0 Ether" />
     <ul>
       <li v-on:click="clickNumber"><button class="button button2">1</button></li>
