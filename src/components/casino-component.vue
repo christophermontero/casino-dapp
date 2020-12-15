@@ -4,16 +4,16 @@
     <h4>Please pick a number between 1 and 10</h4>
     Amount to bet: <input v-model="amount" placeholder="0 Ether" />
     <ul>
-      <li v-on:click="clickNumber">1</li>
-      <li v-on:click="clickNumber">2</li>
-      <li v-on:click="clickNumber">3</li>
-      <li v-on:click="clickNumber">4</li>
-      <li v-on:click="clickNumber">5</li>
-      <li v-on:click="clickNumber">6</li>
-      <li v-on:click="clickNumber">7</li>
-      <li v-on:click="clickNumber">8</li>
-      <li v-on:click="clickNumber">9</li>
-      <li v-on:click="clickNumber">10</li>
+      <li v-on:click="clickNumber"><button class="button button2">1</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">2</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">3</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">4</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">5</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">6</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">7</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">8</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">9</button></li>
+      <li v-on:click="clickNumber"><button class="button button2">10</button></li>
     </ul>
     <img v-if="pending" id="loader" src="../images/blocks.gif" />
     <div class="event" v-if="winEvent">
@@ -86,30 +86,20 @@ export default {
   width: 150px;
 }
 ul {
-  margin: 25px;
+  margin: 10px;
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 25px;
-  grid-row-gap: 25px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
 }
 li {
-  padding: 20px;
-  margin-right: 5px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   cursor: pointer;
-  background-color: #fff;
+  /* background-color: #fff;
   border: -2px solid #bf0d9b;
   color: #bf0d9b;
-  box-shadow: 3px 5px #bf0d9b;
-}
-li:hover {
-  background-color: #bf0d9b;
-  color: white;
-  box-shadow: 0px 0px #bf0d9b;
-}
-li:active {
-  opacity: 0.7;
+  box-shadow: 3px 5px #bf0d9b; */
 }
 * {
   color: #444444;
@@ -119,5 +109,26 @@ li:active {
 }
 #has-lost {
   color: red;
+}
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
+}
+.button2:hover {
+  background-color: #008cba;
+  color: white;
 }
 </style>
