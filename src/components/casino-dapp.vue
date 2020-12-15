@@ -1,25 +1,23 @@
 <template>
   <div>
-    <casino-component />
-    <data-metamask />
-  </div>
+ <hello-metamask/>
+ <casino-component/>
+</div>
 </template>
-
 <script>
-import DataMetamask from "@/components/data-metamask";
-import CasinoComponent from "@/components/casino-component";
-
+import HelloMetamask from '@/components/hello-metamask'
+import CasinoComponent from '@/components/casino-component'
 export default {
-  name: "casino-dapp",
-  beforeCreate() {
-    console.log("registerWeb3 Action dispatched from casino-dapp.vue");
-    this.$store.dispatch("registerWeb3");
+  name: 'casino-dapp',
+  beforeCreate () {
+    console.log('registerWeb3 Action dispatched from casino-dapp.vue')
+    this.$store.dispatch('registerWeb3')
   },
   components: {
-    "data-metamask": DataMetamask,
-    "casino-component": CasinoComponent,
-  },
-};
+    'hello-metamask': HelloMetamask,
+    'casino-component': CasinoComponent
+  }
+}
 </script>
-
-<style scoped></style>
+<style scoped>
+</style>

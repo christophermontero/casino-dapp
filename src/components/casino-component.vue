@@ -1,5 +1,5 @@
 <template>
-  <div class="casino">
+  <div class="casino container">
     <h1>Welcome to the Casino</h1>
     <h4>Please pick a number between 1 and 10</h4>
     Amount to bet: <input v-model="amount" placeholder="0 Ether" />
@@ -15,19 +15,20 @@
       <li v-on:click="clickNumber">9</li>
       <li v-on:click="clickNumber">10</li>
     </ul>
-    <img
-      v-if="pending"
-      id="loader"
-      src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif"
-    />
+    <img v-if="pending" id="loader" src="../images/blocks.gif" />
     <div class="event" v-if="winEvent">
-      Won: {{ winEvent._status }} Amount: {{ winEvent._amount }} Wei
+      <p v-if="winEvent._status" id="has-won">
+        <i aria-hidden="true" class="fa fa-check"></i> Congragulations, you have won
+        {{ winEvent._amount }} wei
+      </p>
+      <p v-else id="has-lost">
+        <i aria-hidden="true" class="fa fa-times"></i> Sorry you lost, try again.
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-import DataMetamask from "@/components/data-metamask";
 export default {
   name: "casino",
   data() {
@@ -75,6 +76,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .casino {
   margin-top: 50px;
@@ -111,5 +113,11 @@ li:active {
 }
 * {
   color: #444444;
+}
+#has-won {
+  color: green;
+}
+#has-lost {
+  color: red;
 }
 </style>
