@@ -94,12 +94,7 @@ ul {
   grid-row-gap: 5px;
 }
 li {
-  /* border-radius: 50%; */
   cursor: pointer;
-  /* background-color: #fff;
-  border: -2px solid #bf0d9b;
-  color: #bf0d9b;
-  box-shadow: 3px 5px #bf0d9b; */
 }
 * {
   color: #444444;
@@ -130,5 +125,9 @@ li {
 .button2:hover {
   background-color: #008cba;
   color: white;
+}
+input {
+  border: 2px solid #008cba;
+  border-radius: 4px;
 }
 </style>
