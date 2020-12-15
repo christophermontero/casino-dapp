@@ -1,28 +1,24 @@
 <template>
   <div class="casino container">
-    <h1>Welcome to the Casino</h1>
-    <h4>Please pick a number between 1 and 10</h4>
-    Amount to bet: <input v-model="amount" placeholder="0 Ether" />
+    <h1>Bienvenido al Casino-Dapp</h1>
+    <h4>Porfavor seleccione un número de 1 a 10</h4>
+    Apuesta: <input v-model="amount" placeholder="0 Ether" />
     <ul>
       <li v-on:click="clickNumber"><button class="button button2">1</button></li>
       <li v-on:click="clickNumber"><button class="button button2">2</button></li>
       <li v-on:click="clickNumber"><button class="button button2">3</button></li>
       <li v-on:click="clickNumber"><button class="button button2">4</button></li>
       <li v-on:click="clickNumber"><button class="button button2">5</button></li>
-      <li v-on:click="clickNumber"><button class="button button2">6</button></li>
-      <li v-on:click="clickNumber"><button class="button button2">7</button></li>
-      <li v-on:click="clickNumber"><button class="button button2">8</button></li>
-      <li v-on:click="clickNumber"><button class="button button2">9</button></li>
-      <li v-on:click="clickNumber"><button class="button button2">10</button></li>
     </ul>
     <img v-if="pending" id="loader" src="../images/blocks.gif" />
     <div class="event" v-if="winEvent">
       <p v-if="winEvent._status" id="has-won">
-        <i aria-hidden="true" class="fa fa-check"></i> Congragulations, you have won
+        <i aria-hidden="true" class="fa fa-check"></i> Felicitaciones, has ganado
         {{ winEvent._amount }} wei
       </p>
       <p v-else id="has-lost">
-        <i aria-hidden="true" class="fa fa-times"></i> Sorry you lost, try again.
+        <i aria-hidden="true" class="fa fa-times"></i> Lo sentimos has perdido, intenta de
+        nuevo.
       </p>
     </div>
   </div>

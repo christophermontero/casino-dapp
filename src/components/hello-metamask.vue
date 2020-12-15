@@ -3,26 +3,26 @@
     <tr>
       <th>
         <p v-if="isInjected" id="has-metamask">
-          <i aria-hidden="true" class="fa fa-check"></i> Metamask installed
+          <i aria-hidden="true" class="fa fa-check"></i> Metamask está instalado
         </p>
         <p v-else id="no-metamask">
-          <i aria-hidden="true" class="fa fa-times"></i> Metamask not found
+          <i aria-hidden="true" class="fa fa-times"></i> Metamask no está instalado
         </p>
       </th>
     </tr>
     <tr>
       <td>
-        <p>Network: {{ network }}</p>
+        <p>Red Ethereum: {{ network }}</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>Account: {{ coinbase }}</p>
+        <p>Cuenta: {{ coinbase }}</p>
       </td>
     </tr>
     <tr>
       <td>
-        <p>Balance: {{ balance }} Wei // {{ ethBalance }} Eth</p>
+        <p>Saldo: {{ balance }} Wei // {{ ethBalance }} Eth</p>
       </td>
     </tr>
   </table>
