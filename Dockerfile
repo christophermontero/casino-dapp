@@ -23,5 +23,5 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the stage 1
 COPY --from=builder /casino-dapp/build /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
