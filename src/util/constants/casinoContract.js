@@ -1,4 +1,4 @@
-const address = '0xa40027130663EF354B6E8dCca61EE6B85533F90e'
+const address = '0xe8828958Ff613C4fEF65576aF786450186412255'
 const ABI = [
 	{
 		"constant": false,
@@ -64,6 +64,20 @@ const ABI = [
 		"constant": true,
 		"inputs": [],
 		"name": "checkBalance",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "checkWinNumber",
 		"outputs": [
 			{
 				"name": "",
