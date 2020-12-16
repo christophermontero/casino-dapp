@@ -1,27 +1,22 @@
-# stage1 as builder
-FROM node:15-alpine as builder
+FROM node:15-alpine
 
-WORKDIR /casino-dapp
+# instalar un simple servidor http para servir nuestro contenido estático
+RUN npm install -g http-server
 
-# Copy the package.json and install dependencies
+# hacer la carpeta 'app' el directorio de trabajo actual
+WORKDIR /app
+
+# copiar 'package.json' y 'package-lock.json' (si están disponibles)
 COPY package*.json ./
+
+# instalar dependencias del proyecto
 RUN npm install
 
-# Copy rest of the files
+# copiar los archivos y carpetas del proyecto al directorio de trabajo actual (es decir, la carpeta 'app')
 COPY . .
 
-# Build the project
+# construir aplicación para producción minificada
 RUN npm run build
 
-
-FROM nginx:alpine as production-build
-COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
-
-## Remove default nginx index page
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy from the stage 1
-COPY --from=builder /casino-dapp/build /usr/share/nginx/html
-
 EXPOSE 8080
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD [ "http-server", "dist" ]
